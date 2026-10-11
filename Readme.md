@@ -19,3 +19,7 @@
 
 "Ладно" - © Жак Фреско  
 <img width="736" height="552" alt="image" src="https://github.com/user-attachments/assets/fb4c0424-294b-4a2b-99e0-a98d015b42c8" />
+
+# Лабораторная работа №2  
+Многостраничный сайт с использование HTML и CSS  
+На тему репетиторства
