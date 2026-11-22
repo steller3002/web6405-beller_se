@@ -27,3 +27,6 @@
 # Лабораторная работа №3  
 Основы JavaScript: набор функций в `lab3/src/core.js` (isInteger, even, sumTo, recSumTo, factorial, isBinary, fibonacci, getOperationFn, sequence, deepEqual).  
 Запуск тестов: `cd lab3 && npm install && npm test`
+
+# Лабораторная работа №4
+В качестве основы скопировать web-сайт из лабораторной работы №2, модернизировать его с использованием технологий HTML, CSS и JavaScript и загрузить проект в репозиторий.
