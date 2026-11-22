@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Запись на занятие</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Главная</a>
+    <a href="subjects.html">Предметы</a>
+    <a href="prices.html">Стоимость</a>
+    <a href="schedule.html">Расписание</a>
+    <a href="signup.html">Запись на занятие</a>
+  </nav>
+
+  <h1 id="title">Запись на занятие</h1>
+  <form id="signup-form">
+    <label for="name">Имя</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Электронная почта</label>
+    <input type="email" id="email" name="email" required>
+
+    <label class="agreement">
+      <input type="checkbox" id="agreement" name="agreement" required>
+      Согласен на обработку персональных данных
+    </label>
+
+    <button type="submit">Подтвердить запись</button>
+  </form>
+
+  <footer>Беллер Станислав, репетитор</footer>
+</body>
+</html>
