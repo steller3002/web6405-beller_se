@@ -22,10 +22,22 @@ function even() {
 }
 
 /**
+ * Проверяет, что значение является числом (и не NaN), иначе выбрасывает ошибку
+ * @param {*} value - проверяемое значение
+ * @param {string} name - имя параметра для текста ошибки
+ */
+function checkNumber(value, name) {
+    if (typeof value !== 'number' || Number.isNaN(value)) {
+        throw new TypeError(`Параметр ${name} должен быть числом`);
+    }
+}
+
+/**
  * Напишите функцию, считающую сумму чисел до заданного используя цикл
  * @param {*} n
  */
 function sumTo(n) {
+    checkNumber(n, 'n');
     let sum = 0;
     for (let i = 1; i <= n; i++) {
         sum = sum + i;
@@ -38,6 +50,7 @@ function sumTo(n) {
  * @param {*} n
  */
 function recSumTo(n) {
+    checkNumber(n, 'n');
     if (n === 1) {
         return 1;
     }
@@ -49,6 +62,7 @@ function recSumTo(n) {
  * @param {*} n
  */
 function factorial(n) {
+    checkNumber(n, 'n');
     let result = 1;
     for (let i = 1; i <= n; i++) {
         result = result * i;
@@ -61,6 +75,7 @@ function factorial(n) {
  * @param {*} n
  */
 function isBinary(n) {
+    checkNumber(n, 'n');
     if (n === 0) {
         return false;
     }
@@ -79,6 +94,12 @@ function isBinary(n) {
  * @param {*} n
  */
 function fibonacci(n) {
+    checkNumber(n, 'n');
+    if (n < 0) {
+        throw new RangeError(
+            'Номер числа Фибоначчи не может быть отрицательным'
+        );
+    }
     let a = 0;
     let b = 1;
     for (let i = 0; i < n; i++) {
@@ -101,6 +122,9 @@ function fibonacci(n) {
  * console.log(sumFn(3)) - 18
  */
 function getOperationFn(initialValue, operatorFn) {
+    if (operatorFn !== undefined && typeof operatorFn !== 'function') {
+        throw new TypeError('operatorFn должен быть функцией');
+    }
     let value = initialValue;
     return function (newValue) {
         if (operatorFn === undefined) {
@@ -134,6 +158,8 @@ function sequence(start, step) {
     if (step === undefined) {
         step = 1;
     }
+    checkNumber(start, 'start');
+    checkNumber(step, 'step');
     let current = start;
     return function () {
         let result = current;
